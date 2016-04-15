@@ -54,6 +54,9 @@ public class SoccerRestControllerDocumentation {
 	protected WebApplicationContext webApplicationContext;
 
 	protected MockMvc mockMvc;
+	
+	@Rule
+	public final StandardOutputStreamLog consoleLog = new StandardOutputStreamLog();
 
 	@Rule
 	public final RestDocumentation restDocumentation = new RestDocumentation("target/generated-snippets");
