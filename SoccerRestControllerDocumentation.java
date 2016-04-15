@@ -36,6 +36,7 @@ import org.springframework.web.context.WebApplicationContext;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.junit.contrib.java.lang.system.StandardOutputStreamLog;
 
 @WebAppConfiguration
 @ActiveProfiles({ "test", "jamon" })
@@ -61,7 +62,7 @@ public class SoccerRestControllerDocumentation {
 
 	@Before()
 	public void setUp() throws Exception {
-		MockitoAnnotations.initMocks(this);
+
 
 		mockMvc = MockMvcBuilders.webAppContextSetup(webApplicationContext)
 				.apply(documentationConfiguration(restDocumentation)).build();
@@ -70,6 +71,11 @@ public class SoccerRestControllerDocumentation {
 		// DocumentRestController()).build();
 		objectMapper = new ObjectMapper();
 		objectMapper.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
+	}
+	
+	@After
+	public void cleanUp() {
+		consoleLog.clear();
 	}
 
 	@Test
