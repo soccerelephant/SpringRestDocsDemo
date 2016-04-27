@@ -102,6 +102,7 @@ public class SoccerRestControllerDocumentation {
 
 		String soccerJsonCreated = mockMvc
 				.perform(post(URL).contentType(MediaType.APPLICATION_JSON_VALUE).content(soccerJsonToBeCreated))
+				.andExpect(status().isCreated())
 				.andExpect(jsonPath("id", notNullValue())).andExpect(jsonPath("name", equalTo("Soccer")))
 				.andDo(document).andReturn().getResponse().getContentAsString();
 
