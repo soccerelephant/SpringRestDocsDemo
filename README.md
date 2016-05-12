@@ -25,3 +25,5 @@ Write a Test class which both tests and documents your APIs, There is an example
 Create an Asciidoc format file which contains the API descriptions and use Asciidoc’s include command to insert the generated Asciidoc files in the appropriate places. There is an example in src/main/asciidoc/api-guide.adoc
 Use the Asciidoctor Maven plugin (http://asciidoctor.org/docs/asciidoctor-maven-plugin/) to publish the API documentation in HTML format. To do this for the example DemoApplication execute mvn install – this will create the HTML file in target/generated-docs/api-guide.html
 API can also be viewed from http://localhost:8080/docs/api-guide.html
+
+More examples:  https://github.com/spring-projects/spring-restdocs/tree/master/samples
